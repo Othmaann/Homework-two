@@ -1,15 +1,18 @@
 const RenderData = (props) => {
   return (
     <div>
+      {console.log(props)}
       {props.list.map((value, index) => {
         return (
-          <div>
-            <h2 key={index} value={value}>
-              {props.value.firstName +
+          <div key={index} value={value}>
+            <h2>
+              {value.productname +
                 " " +
-                props.value.lastName +
+                value.produktamount +
                 " " +
-                props.value.age}
+                value.productcategory +
+                " " +
+                value.date}
             </h2>
           </div>
         );
@@ -18,3 +21,4 @@ const RenderData = (props) => {
   );
 };
 export default RenderData;
+
