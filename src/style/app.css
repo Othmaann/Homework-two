@@ -1,4 +1,38 @@
 body {
-  margin: 0;
+  margin: auto;
   box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(82, 4, 82, 0.801);
+ 
+}
+
+.render{
+    display: block;
+    margin: 40px 800px;
+    padding: 52px 16px;
+    background-color: #420642;
+    border-radius: 100px;
+    width: auto;
+    height: auto;
+}
+
+form{
+  background-color: #420642;
+  border-radius: 100px;
+  display: block;
+    margin: 4px 600px;
+    padding: 52px 16px;
+}
+
+button{
+  background-color: hsla(0, 98%, 35%, 0.63);
+  color: black;
+  border: none;
+  padding: 32px 36px;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 10px 2px;
+  cursor: pointer;
+  border-radius: 20px;
 }

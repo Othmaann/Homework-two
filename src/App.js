@@ -1,18 +1,58 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import Form from "./components/form/form";
 import RenderData from "./components/render/Render";
+import Showcatagory from "./components/render/Showcatagory";
 
 const App = () => {
+  const [data, setData] = useState([]);
+  const [catagory, setCatagory] = useState([]);
   const [list, setList] = useState([]);
-  const addNewUser = (formObj) => {
-    setList((list) => [...list, formObj]);
+
+  const addData = (dataobjekt) => {
+    if (!catagory.includes(dataobjekt.catagory)) {
+      setCatagory([...catagory, dataobjekt.catagory]);
+    }
+    setData([...data, dataobjekt]);
+    setList([...list, dataobjekt]);
+  };
+
+  const filtreraMydata = (catagory) => {
+    let filterCatagory = data;
+    filterCatagory = filterCatagory.filter(
+      (product) => product.catagory === catagory
+    );
+    setList([...filterCatagory]);
+  };
+
+  const showAll = () => {
+    setList([...data]);
+  };
+  const click = () => {
+    return <button onClick={() => showAll()}>Show All</button>;
   };
 
   return (
-    <Fragment>
-      <Form addNewUser={addNewUser} />
+    <div>
+      <Form addData={addData} />
+      <div>
+        <div>
       <RenderData list={list}></RenderData>
-    </Fragment>
+      {click()}
+
+      <div>
+          {catagory.map((value, index) => {
+            return (
+              <Showcatagory
+                key={index}
+                value={value}
+                filter={filtreraMydata}
+              ></Showcatagory>
+            );
+          })}
+              </div>
+      </div>
+    </div>
+    </div>
   );
 };
 

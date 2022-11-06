@@ -1,6 +1,6 @@
 .footer {
   background-color: black;
-  height: 250px;
+  height: 100%;
   width: 100%;
   color: white;
   display: flex;
@@ -9,15 +9,19 @@
   max-height: 150px;
   overflow: hidden;
   justify-content: space-around;
+  height: auto;
+    margin-top: auto;
 }
 
 .footer > a {
   font-size: 24px;
   color: white;
+   width: 100%;
 }
 
 .footer > a:not(:last-child) {
   margin-bottom: 12px;
+  
 }
 
 .footer > a:hover {
